@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flash Cards</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icons/icon-192.png" />
+  <meta name="theme-color" content="#3498db" />
+</head>
+<body>
+  <div class="container">
+    <input type="file" id="fileInput" accept=".xlsx, .xls" />
+
+    <div class="card" id="questionBox">
+      <p id="questionText">...</p>
+    </div>
+
+    <div class="card" id="answerBox">
+      <p id="answerText">...</p>
+    </div>
+
+    <div class="buttons">
+      <button id="showQuestionBtn">Preguntar</button>
+      <button id="showAnswerBtn">Respuesta</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+  <script src="script.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("service-worker.js");
+    }
+  </script>
+</body>
+</html>
